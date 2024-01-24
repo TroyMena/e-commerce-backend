@@ -33,7 +33,7 @@ Product.init(
       allowNull: false,
       references: {
         model: 'category',
-        key: category_name,
+        key: 'id',
         unique: false,
       }
     }
