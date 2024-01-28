@@ -2,6 +2,9 @@ const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
 // The `/api/tags` endpoint
+router.get('/api/tags', (req, res) => {
+  res.json(products);
+})
 
 router.get('/', async (req, res) => {
   // find all tags
@@ -82,8 +85,9 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// Deletes on tag by its `id` value
 router.delete('/:id', async (req, res) => {
-  // delete on tag by its `id` value
+
   try {
     const deletedTag = await Tag.destroy({
       where: {
