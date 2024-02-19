@@ -14,8 +14,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Product,
-          through: { attributes: [] },
-          attributes: ['product_name', 'price', 'stock'],
+          through: ProductTag,
         },
       ],
     });
@@ -37,8 +36,7 @@ router.get('/:id', async (req, res) => {
       include: [
         {
           model: Product,
-          through: { attributes: [] },
-          attributes: ['product_name', 'price', 'stock']
+          through: ProductTag,
         },
       ],
     });

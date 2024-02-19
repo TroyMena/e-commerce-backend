@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
         },
         {
           model: Tag,
-          through: { attributes: [] },
+          through: ProductTag,
           attributes: ['tag_name'],
         },
       ],
@@ -47,8 +47,8 @@ router.get('/:id', async (req, res) => {
         },
         {
           model: Tag,
-          through: { attributes: [] },
-          attributor: ['tag_name'],
+          through: ProductTag ,
+          attributes: ['tag_name'],
         },
       ],
     });
@@ -145,7 +145,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', async (req, res) => {
 
   try {
-    const deletedProduct = await Tag.destroy({
+    const deletedProduct = await Product.destroy({
       where: {
         id: req.params.id,
       }
